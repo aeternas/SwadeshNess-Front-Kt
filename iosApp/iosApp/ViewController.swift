@@ -1,5 +1,5 @@
 import UIKit
-import app
+import SwadeshNess_Front_Kt
 
 class ViewController: UIViewController {
     override func viewDidLoad() {
@@ -12,3 +12,4 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var label: UILabel!
 }
+w

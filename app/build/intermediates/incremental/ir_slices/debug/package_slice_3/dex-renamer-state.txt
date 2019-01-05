@@ -1,0 +1,4 @@
+#Fri Jan 04 15:51:28 MSK 2019
+base.0=/Users/ivan/IntelliJIDEAProjects/SwadeshNess-Front-Kt/app/build/intermediates/transforms/dexMerger/debug/3
+renamed.0=classes.dex
+path.0=classes.dex

@@ -9,6 +9,7 @@ expect object Platform {
 }
 
 data class Language(var fullName: String, var code: String)
+data class LanguageGroup(var name: String, var languages: Array<Language>)
 
 fun hello(): String = "Hello from ${Platform.name}"
 

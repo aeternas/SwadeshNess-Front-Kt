@@ -3,9 +3,10 @@ package sample
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
+import java.io.IOException
 
 
 actual class Sample {
@@ -19,25 +20,15 @@ actual object Platform {
 class MainActivity : AppCompatActivity() {
     val languages: ArrayList<Language> = ArrayList()
 
+    var adapter = CountriesAdapter(languages, this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        // Loads animals into the ArrayList
-        getCountries()
-
-        // Creates a vertical Layout Manager
         rv_countries.layoutManager = LinearLayoutManager(this)
-
-        // You can use GridLayoutManager if you want multiple columns. Enter the number of columns as a parameter.
-//        rv_animal_list.layoutManager = GridLayoutManager(this, 2)
-
-        // Access the RecyclerView Adapter and load the data into it
-        rv_countries.adapter = CountriesAdapter(languages, this)
-
-
+        rv_countries.adapter = adapter
+        getCountries()
     }
-
 
     fun getCountries() {
         val url = "https://vpered.su/v1/groups"
@@ -47,10 +38,18 @@ class MainActivity : AppCompatActivity() {
 
         client.newCall(request).enqueue(object: Callback {
             override fun onResponse(call: Call, response: Response) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                val body = response?.body()?.string()
+                val gson = GsonBuilder().create()
+                val langGroups = gson.fromJson(body, Array<LanguageGroup>::class.java)
+                val languages = langGroups.flatMap { it.languages.asList() }
+                runOnUiThread {
+                    adapter.updateData(languages)
+                }
+            }
+
+            override fun onFailure(call: Call, e: IOException) {
+                println("Failed to execute request")
             }
         })
-
-
     }
 }

@@ -8,9 +8,14 @@ import android.view.ViewGroup
 import sample.Language
 import kotlinx.android.synthetic.main.countries_list_item.view.*
 
-class CountriesAdapter(val items : ArrayList<Language>, val context: Context) : RecyclerView.Adapter<ViewHolder>() {
+class CountriesAdapter(val adapterItems : List<Language>, val context: Context) : RecyclerView.Adapter<ViewHolder>() {
+    var items = adapterItems
 
-    // Gets the number of animals in the list
+    fun updateData(updatedItems: List<Language>) {
+        items = updatedItems
+        notifyDataSetChanged()
+    }
+
     override fun getItemCount(): Int {
         return items.size
     }

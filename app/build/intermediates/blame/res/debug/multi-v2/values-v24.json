@@ -4,7 +4,7 @@
             "outputFile": "/Users/ivan/IntelliJIDEAProjects/SwadeshNess-Front-Kt/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/ivan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/91dccbd350ab55655f4d10a549678108/res/values-v24/values-v24.xml",
+                    "source": "/Users/ivan/.gradle/caches/transforms-2/files-2.1/eac134943e7595b71c36ba21ad7e60cf/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

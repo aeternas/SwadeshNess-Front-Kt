@@ -87,7 +87,7 @@ task copyFramework {
 
     doLast {
         def srcFile = kotlin.targets."$target".compilations.main.getBinary("FRAMEWORK", buildType)
-        def targetDir = getProperty("configuration.build.dir")
+        def targetDir = "/Users/ivan/Library/Developer/Xcode/DerivedData/iosApp-gwzwvdzqjutuazgbxyixhxuzfpqa/Build/Intermediates.noindex/"
         copy {
             from srcFile.parent
             into targetDir

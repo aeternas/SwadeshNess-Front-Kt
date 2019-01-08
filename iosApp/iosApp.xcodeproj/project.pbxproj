@@ -128,6 +128,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F861D7FA207FA4100085E80D /* Build configuration list for PBXNativeTarget "iosApp" */;
 			buildPhases = (
+				2C99441521E48E1D0080FE75 /* ShellScript */,
 				F861D7D9207FA40F0085E80D /* Sources */,
 				F861D7DA207FA40F0085E80D /* Frameworks */,
 				F861D7DB207FA40F0085E80D /* Resources */,
@@ -237,6 +238,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2C99441521E48E1D0080FE75 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$SRCROOT/../../SwadeshNess-Front-Kt/\"\necho $CONFIGURATION_BUILD_DIR\ngradle :app:copyFramework -PconfigurationBuildDir=\"$CONFIGURATION_BUILD_DIR\"\n";
+		};
 		F861D812207FA4320085E80D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -429,6 +447,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "/Users/ivan/IntelliJIDEAProjects/SwadeshNess-Front-Kt/build/xcode-frameworks";
 				INFOPLIST_FILE = iosApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,6 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "/Users/ivan/IntelliJIDEAProjects/SwadeshNess-Front-Kt/build/xcode-frameworks";
 				INFOPLIST_FILE = iosApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

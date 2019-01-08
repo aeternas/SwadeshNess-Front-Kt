@@ -8,8 +8,8 @@ expect object Platform {
     val name: String
 }
 
-data class Language(var fullName: String, var code: String)
-data class LanguageGroup(var name: String, var languages: Array<Language>)
+class Language(val fullName: String, val code: String)
+class LanguageGroup(val name: String, val languages: Array<Language>)
 
 fun hello(): String = "Hello from ${Platform.name}"
 
